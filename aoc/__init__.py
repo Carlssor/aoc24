@@ -2,11 +2,8 @@ import inspect
 import os
 
 
-DEBUG = False
-
-
-def read_puzzle_input():
-    input_file_name_modifier = "_example" if DEBUG else ""
+def read_puzzle_input(example: bool = False):
+    input_file_name_modifier = "_example" if example else ""
     input_file_name = f"input{input_file_name_modifier}_{_get_puzzle_number()}.txt"
     if not os.path.exists(input_file_name):
         input_file_name = f"input{input_file_name_modifier}.txt"
